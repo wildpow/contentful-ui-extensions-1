@@ -15,6 +15,8 @@ export default function ExtensionsList() {
           className="">Localization Lookup</Link></li>
         <li><Link to="/locale-zooms"
           className="">Locale Zooms</Link></li>
+        <li><Link to="/operating-hours"
+          className="">Operating Hours</Link></li>
         <li><Link to="/recipe-ingredients"
           className="">Recipe Ingredients</Link></li>
         <li><Link to="/person-name"

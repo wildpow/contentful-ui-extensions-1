@@ -8,6 +8,7 @@ import ColorPicker from "./ColorPicker";
 import LocalizationLookup from "./LocalizationLookup";
 import LocaleZooms from "./LocaleZooms";
 import ContentDiff from "./ContentDiff";
+import OperatingHours from "./OperatingHours";
 import Seo from "./Seo";
 import PersonName from './PersonName';
 import PhoneNumber from './PhoneNumber';
@@ -20,6 +21,7 @@ import localizationLookupMockSdk from "./LocalizationLookup/mockSdk";
 import localeZoomsMockSdk from "./LocaleZooms/mockSdk";
 import contentDiffMockSdk from "./ContentDiff/mockSdk";
 import colorPickerMockSdk from "./ColorPicker/mockSdk";
+import operatingHoursMockSdk from "./OperatingHours/mockSdk";
 import personNameMockSdk from './PersonName/mockSdk';
 import phoneNumberMockSdk from './PhoneNumber/mockSdk';
 import recipeStepsMockSdk from "./RecipeSteps/mockSdk";
@@ -60,6 +62,15 @@ const App = ({ sdk, locations }) => {
             <LocaleZooms
               sdk={sdk || localeZoomsMockSdk}
               locations={locations}
+            />
+          )}
+        />
+        <Route
+          path="/operating-hours"
+          exact
+          component={() => (
+            <OperatingHours
+              sdk={sdk || operatingHoursMockSdk}
             />
           )}
         />
