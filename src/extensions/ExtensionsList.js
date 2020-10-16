@@ -5,6 +5,8 @@ export default function ExtensionsList() {
   return (
     <div>
       <ul>
+        <li><Link to="/bynder"
+          className="">Bynder</Link></li>
         <li><Link to="/bynder-image"
           className="">Bynder Image</Link></li>
         <li><Link to="/color-picker"

@@ -4,6 +4,7 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
+import Bynder from './Bynder';
 import ColorPicker from "./ColorPicker";
 import LocalizationLookup from "./LocalizationLookup";
 import LocaleZooms from "./LocaleZooms";
@@ -16,6 +17,8 @@ import RecipeIngredients from "./RecipeIngredients";
 import SeoConfig from "./Seo/SeoConfig";
 import ExtensionsList from "./ExtensionsList";
 import history from "../history";
+
+import bynderMockSdk from "./Bynder/mockSdk";
 import localizationLookupMockSdk from "./LocalizationLookup/mockSdk";
 import localeZoomsMockSdk from "./LocaleZooms/mockSdk";
 import contentDiffMockSdk from "./ContentDiff/mockSdk";
@@ -33,6 +36,16 @@ const App = ({ sdk, locations }) => {
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={ExtensionsList} />
+        <Route
+          path="/bynder"
+          exact
+          component={() => (
+            <Bynder
+              sdk={sdk || bynderMockSdk}
+              locations={locations}
+            />
+          )}
+        />
         <Route
           path="/color-picker"
           exact
