@@ -4,6 +4,8 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
+
+import Address from "./Address";
 import ColorPicker from "./ColorPicker";
 import LocalizationLookup from "./LocalizationLookup";
 import LocaleZooms from "./LocaleZooms";
@@ -16,6 +18,8 @@ import RecipeIngredients from "./RecipeIngredients";
 import SeoConfig from "./Seo/SeoConfig";
 import ExtensionsList from "./ExtensionsList";
 import history from "../history";
+
+import addressMockSdk from "./Address/mockSdk";
 import localizationLookupMockSdk from "./LocalizationLookup/mockSdk";
 import localeZoomsMockSdk from "./LocaleZooms/mockSdk";
 import contentDiffMockSdk from "./ContentDiff/mockSdk";
@@ -33,6 +37,16 @@ const App = ({ sdk, locations }) => {
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={ExtensionsList} />
+        <Route
+          path="/address"
+          exact
+          component={() => (
+            <Address
+              sdk={sdk || addressMockSdk}
+              locations={locations}
+            />
+          )}
+        />
         <Route
           path="/color-picker"
           exact
